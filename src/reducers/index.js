@@ -3,5 +3,4 @@ import { apiVersion }  from './home';
 
 export default combineReducers({
     firstStore:apiVersion
-    
 });

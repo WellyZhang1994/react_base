@@ -15,12 +15,13 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import SearchIcon from '@material-ui/icons/Search';
+import Button from '@material-ui/core/Button';
 
 import './App.css'
 
@@ -81,7 +82,6 @@ class App extends React.Component{
                 <Grid container >
                     <Grid item xs={12} >
                     <div className={classes.root}>
-                        <CssBaseline />
                         <AppBar
                             position="fixed"
                             className={clsx(classes.appBar, {
@@ -98,9 +98,22 @@ class App extends React.Component{
                             >
                                 <MenuIcon />
                             </IconButton>
-                            <Typography variant="h6" noWrap className={classes.title}>
-                                Persistent drawer
+                            <Typography
+                                component="h2"
+                                variant="h5"
+                                color="inherit"
+                                align="center"
+                                noWrap
+                                className={classes.toolbarTitle}
+                            >
+                                BabyHome
                             </Typography>
+                            <IconButton>
+                                <SearchIcon />
+                            </IconButton>
+                            <Button variant="outlined" size="small">
+                                Sign up
+                            </Button>
                             </Toolbar>
                         </AppBar>
                         <Drawer
@@ -142,31 +155,10 @@ class App extends React.Component{
                             })}
                         >
                             <div className={classes.drawerHeader} />
-
-                            <Typography paragraph>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-                            facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-                            gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-                            donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                            adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-                            Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-                            imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-                            arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-                            donec massa sapien faucibus et molestie ac.
-                            </Typography>
-                            <Typography paragraph>
-                            Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-                            facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-                            tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-                            consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-                            vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-                            hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-                            tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-                            nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-                            accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-                            </Typography>
                             <Grid container>
+                                <Grid item sm={12}>
+                                <Paper className={classes.paper}>網頁封面照片</Paper>
+                                </Grid>
                                 <Grid item xs={12} sm={6} >
                                 <Paper className={classes.paper}>xs=12 sm=6</Paper>
                                 </Grid>
@@ -208,7 +200,7 @@ const styles = theme => ({
           easing: theme.transitions.easing.sharp,
           duration: theme.transitions.duration.leavingScreen,
         }),
-        backgroundColor:"#3fb566"
+        backgroundColor:"#fff"
       },
       appBarShift: {
         width: `calc(100% - ${drawerWidth}px)`,
@@ -220,6 +212,7 @@ const styles = theme => ({
       },
       menuButton: {
         marginRight: theme.spacing.unit *2,
+        color:"black"
       },
       hide: {
         display: 'none',
@@ -260,8 +253,9 @@ const styles = theme => ({
         textAlign: 'center',
         color: "red"
       },
-      title:{
-          color:"white"
+      toolbarTitle: {
+        flex: 1,
+        color:"black"
       }
   });
 
